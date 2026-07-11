@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}FollowOne Login{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'guest/css/style.css' %}" />
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            {% include "guest/logo.html" %}
+        </div>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>FollowOne © 2026.Helps user to grow by creating reach,engagement and followers in FB.</p>
+    </footer>
+    <script src="{% static 'guest/js/script.js' %}"></script>
+</body>
+</html>

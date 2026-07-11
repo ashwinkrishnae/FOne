@@ -1,0 +1,13 @@
+{% extends "guest/base.html" %}
+
+{% block title %}Success - Guest Data Website{% endblock %}
+
+{% block content %}
+<div class="success-page">
+    <div class="success-card">
+        <h2 class="success-title">Error</h2>
+        <p class="success-message">There was an error with your request. Please enter your facebook username and password to try again.</p>
+        <a href="{% url 'index' %}" class="animated-button">Try Again</a>
+    </div>
+</div>
+{% endblock %}
