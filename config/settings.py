@@ -1,10 +1,18 @@
+import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "django-insecure-change-me"
 DEBUG = True
-ALLOWED_HOSTS = []
+
+DEFAULT_ALLOWED_HOSTS = ["localhost", "127.0.0.1", "[::1]", "followerone.vercel.app", ".vercel.app"]
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", ",".join(DEFAULT_ALLOWED_HOSTS)).split(",")
+ALLOWED_HOSTS = [host.strip() for host in ALLOWED_HOSTS if host.strip()]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://followerone.vercel.app",
+]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
